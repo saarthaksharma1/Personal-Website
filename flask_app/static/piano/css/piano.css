@@ -1,0 +1,163 @@
+/* Piano CSS */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.header-text {
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+    color: #000000;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    max-width: 43.75rem;
+    margin: 0 auto 1.25rem auto; /* Center and add bottom margin */
+}
+
+.header-text h1 {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #131313;
+}
+.piano-container {
+    margin: 0 auto;
+    max-width: 37.5rem;
+    position: relative;
+    background-color: #2c2c2c;
+    border-radius: 1.25rem;
+    padding: 2.5rem 1.25rem 2.5rem 0.625rem; /* Adjusted left padding to 0.625rem to shift it left */
+    color: #ffffff;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.3);
+}
+.piano-container h1{
+    font-size: 0.625rem;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+}
+
+/* Piano Structure */
+.piano {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 12.5rem;
+    position: relative;
+    margin: 0 auto;
+    gap: 0.3125rem;
+    background-color: #2c2c2c;
+    border-radius: 1.25rem 1.25rem 0 0;
+    padding: 1.25rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+    width: max-content;
+}
+
+/* White Keys */
+.white-key {
+    background-color: #ffffff;
+    border: 0.125rem solid #000000;
+    height: 100%;
+    width: 3.125rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #131313;
+    padding-bottom: 0.625rem;
+}
+/* Initially hide all the letters */
+.white-key span, .black-key span {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* When the piano is hovered, show all the letters */
+.piano:hover .white-key span,
+.piano:hover .black-key span {
+    opacity: 1;
+}
+
+.white-key:active, .white-key.pressed {
+    background-color: #cccccc;
+    transform: translateY(0.1875rem);
+}
+
+/* Black Keys */
+.black-key {
+    background-color: #131313;
+    border: 0.125rem solid #000000;
+    height: 60%;  /* Keep the height of black keys */
+    width: 1.875rem;  /* Width of black keys */
+    position: absolute;
+    top: 0.9375rem;    /* Shift down to align the top of black keys with white keys */
+    z-index: 2;   /* Ensure black keys are above white keys */
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+    padding-bottom: 0.625rem;
+}
+
+/* Corrected positioning for each black key */
+#W { left: 3.625rem; }  /* Adjusted to fit between A and S */
+#E { left: 7.0625rem; } /* Adjusted to fit between S and D */
+#T { left: 13.9375rem; } /* Adjusted to fit between F and G */
+#Y { left: 17.375rem; } /* Adjusted to fit between G and H */
+#U { left: 20.8125rem; } /* Adjusted to fit between H and J */
+#O { left: 27.6875rem; } /* Adjusted to fit between K and L */
+#P { left: 31.125rem; } /* Adjusted to fit between L and ; */
+
+/* Black keys pressed effect */
+.black-key:active, .black-key.pressed {
+    background-color: #444444;
+    transform: translateY(0.1875rem);
+}
+/* Awakened message style */
+.awakened {
+    font-size: 0.9375rem;
+    color: #131313;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: transparent;  /* Changed to transparent to ensure no black background */
+    position: fixed;
+    top: 70%;  /* Moved it down so it doesn't overlap with the header */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 37.5rem;
+    box-shadow: none;  /* Removed any shadow that might appear as a border */
+}
+
+.awakened img {
+    display: block;
+    margin: auto;
+    border: none;  /* No border around the image */
+    max-width: 37.5rem;  /* Keep the increased image size */
+    width: 100%;
+    height: 100%;
+}
+/* Responsive Styles */
+@media (max-width: 40.625rem) {
+    .piano {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 9.375rem;
+    }
+
+    .white-key {
+        height: 9.375rem;
+    }
+
+    .black-key {
+        height: 50%;
+    }
+}

@@ -1,0 +1,29 @@
+<!-- Login HTML with Jinja Improvements-->
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='main/login.js') }}"></script>
+{% endblock %}
+
+{% block maincontent %}
+<div class="login-page">
+    <div class="login-container">
+        <h1 class="login-title">Login</h1>
+        <form id="login-form" onsubmit="checkCredentials(); return false;">
+            <div class="form-group">
+                <input type="email" id="login-email" class="login-input" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="login-input" placeholder="Your Password" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="login-button" name="login_submit" />
+            </div>
+        </form>
+        
+        <!-- Authentication error message -->
+        <div id="auth-message" class="auth-message">Authentication error. Please try again.</div>
+    </div>
+</div>
+{% endblock %}
+<script></script>

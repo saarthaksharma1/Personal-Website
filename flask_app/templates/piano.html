@@ -1,0 +1,43 @@
+<!-- Piano HTML with Jinja Improvements-->
+{% extends "shared/layout.html" %}
+
+{% block title %}Piano - Saarthak Sharma{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="static/piano/css/piano.css">
+{% endblock %}
+
+{% block maincontent %}
+<div class="header-text">
+    <h1>Behold piano great and old, its master slumbers in far off cold,<br>
+        If you wish to see anew, call out to it - we see you.</h1>
+</div>
+
+<div class="piano-container">
+    <h2 class="piano-title">The Great Old One</h2>
+    <div class="piano">
+        <div class="white-key" id="A" data-key="65"><span>A</span></div>
+        <div class="black-key" id="W" data-key="87"><span>W</span></div>
+        <div class="white-key" id="S" data-key="83"><span>S</span></div>
+        <div class="black-key" id="E" data-key="69"><span>E</span></div>
+        <div class="white-key" id="D" data-key="68"><span>D</span></div>
+        <div class="white-key" id="F" data-key="70"><span>F</span></div>
+        <div class="black-key" id="T" data-key="84"><span>T</span></div>
+        <div class="white-key" id="G" data-key="71"><span>G</span></div>
+        <div class="black-key" id="Y" data-key="89"><span>Y</span></div>
+        <div class="white-key" id="H" data-key="72"><span>H</span></div>
+        <div class="black-key" id="U" data-key="85"><span>U</span></div>
+        <div class="white-key" id="J" data-key="74"><span>J</span></div>
+        <div class="white-key" id="K" data-key="75"><span>K</span></div>
+        <div class="black-key" id="O" data-key="79"><span>O</span></div>
+        <div class="white-key" id="L" data-key="76"><span>L</span></div>
+        <div class="black-key" id="P" data-key="80"><span>P</span></div>
+        <div class="white-key" id="semicolon" data-key="186"><span>;</span></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="static/piano/js/piano.js"></script>
+{% endblock %}
+<script></script>

@@ -1,0 +1,26 @@
+{% extends "shared/layout.html" %}
+
+{% block title %}Chat{% endblock %}
+
+{% block maincontent %}
+<div>
+    <h3>Chat</h3>
+    <!-- Chat box -->
+    <div id="chat" class="chat-box">
+        <!-- Chat messages will dynamically append here -->
+    </div>
+
+    <!-- Input field -->
+    <input
+        type="text"
+        id="message-input"
+        class="message-input"
+        placeholder="Enter your message here..."
+    />
+
+    <!-- Buttons -->
+    <button id="send-button" class="send-btn">Send</button>
+    <button id="leave-chat-btn" class="leave-chat-btn">Leave Chat</button>
+</div>
+{% endblock %}
+<script></script>

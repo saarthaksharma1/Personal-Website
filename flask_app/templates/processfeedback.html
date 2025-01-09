@@ -1,0 +1,19 @@
+<!-- Process Feedback HTML -->
+{% extends "shared/layout.html" %}
+
+{% block title %}Feedback - Saarthak Sharma{% endblock %}
+
+{% block maincontent %}
+<div class="feedback__container">
+    <h1 class="feedback__title">Thanks for your feedback - here's what others had to say:</h1>
+    <ul class="feedback__list">
+        {% for item in feedback %}
+            <li class="feedback__item">
+                <strong>{{ item.name }}</strong> said: {{ item.comment }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}" class="feedback__back-link">Return to Home</a>
+</div>
+{% endblock %}
+<script></script>

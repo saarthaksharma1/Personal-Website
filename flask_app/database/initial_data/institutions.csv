@@ -1,0 +1,4 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Financial Services","Mercedes-Benz Financial Services","IT",NULL,"Farmington Hills","Michigan",NULL
+"2","Automotive","Yazaki North America","Quality Assurance",NULL,"Canton","Michigan",NULL
+"3","Education","Michigan State University","Engineering",NULL,"East Lansing","Michigan",NULL

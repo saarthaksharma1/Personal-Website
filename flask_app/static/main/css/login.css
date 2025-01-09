@@ -1,0 +1,76 @@
+/* Login CSS */
+
+/* Center the login page */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50rem;
+    background-color: #f8f9fa; 
+}
+
+/* Login container styling */
+.login-container {
+    background-color: #ffffff; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); 
+    padding: 1.875rem 2.5rem; 
+    width: 100%;
+    max-width: 25rem; 
+    text-align: center;
+}
+
+/* Login title */
+.login-title {
+    font-size: 1.5rem; 
+    color: #333333; 
+    margin-bottom: 1.25rem; 
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 0.9375rem; 
+}
+
+/* Input fields */
+.login-input {
+    width: 100%;
+    padding: 0.625rem; 
+    border: 0.0625rem solid #dddddd; 
+    border-radius: 0.3125rem; 
+    font-size: 0.875rem; 
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.login-button {
+    width: 100%;
+    padding: 0.625rem; 
+    background-color: #007bff; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 0.3125rem; 
+    font-size: 1rem; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Submit button hover styling */
+.login-button:hover {
+    background-color: #0056b3; 
+}
+/* Authorized message styling */
+.auth-message {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem; 
+    margin-top: 0.9375rem; 
+    text-align: center;
+}
+
+/* Mobile View */
+@media (max-width: 40.625rem) { 
+    .login-container {
+        padding: 1.25rem; 
+    }
+}

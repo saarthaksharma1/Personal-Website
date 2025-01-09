@@ -1,0 +1,84 @@
+<!-- Resume HTML with Jinja Improvements-->
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="resume__container">
+    <h1 class="resume__title">Saarthak Sharma's Resume</h1>
+
+    <div class="resume__contact-info">
+        <p><strong>Email:</strong> <a class="resume__link" href="mailto:sharm157@msu.edu">sharm157@msu.edu</a></p>
+        <span class="resume__contact-separator">|</span>
+        <p><strong>Phone:</strong> (248)-206-9746</p>
+    </div>
+
+    {% if resume_data %}
+        {% for inst_id, inst in resume_data.items() %}
+            <div class="resume__institution">
+                <div class="resume__institution-header">
+                    <h2 class="resume__institution-name">{{ inst.get('name', 'No Institution Name') }}</h2>
+                    <p class="resume__institution-location">
+                        {% if inst.get('address') %}{{ inst.get('address') }}, {% endif %}
+                        {% if inst.get('city') %}{{ inst.get('city') }}, {% endif %}
+                        {% if inst.get('state') %}{{ inst.get('state') }}{% endif %}
+                        {% if inst.get('zip') %} - {{ inst.get('zip') }}{% endif %}
+                        {% if inst.get('department') %} | ({{ inst.get('department') }}){% endif %}
+                    </p>
+                </div>
+
+                {% if inst.positions %}
+                    {% for pos_id, pos in inst.positions.items() %}
+                        <div class="resume__position">
+                            <div class="resume__position-header">
+                                <h3 class="resume__position-title">{{ pos.get('title', 'No Position Title') }}</h3>
+                                <p class="resume__position-dates">
+                                    {{ pos.get('start_date', 'Ongoing') }} - 
+                                    {{ pos.get('end_date', 'Present') if pos.get('end_date') else 'Present' }}
+                                </p>
+                            </div>
+                            {% if pos.get('responsibilities') %}
+                                <p class="resume__position-responsibilities">{{ pos.get('responsibilities', 'No Responsibilities') }}</p>
+                            {% endif %}
+
+                            {% if pos.experiences %}
+                                <ul class="resume__experience-list">
+                                    {% for exp_id, exp in pos.experiences.items() %}
+                                        <li class="resume__experience">
+                                            <div class="resume__experience-content">
+                                                <strong>
+                                                    {% if exp.get('hyperlink') %}
+                                                        <a class="resume__link" href="{{ exp.get('hyperlink') }}" target="_blank">{{ exp.get('name', 'No Experience Name') }}</a>:
+                                                    {% else %}
+                                                        {{ exp.get('name', 'No Experience Name') }}:
+                                                    {% endif %}
+                                                </strong>
+                                                {% if exp.get('description') %}
+                                                    <span class="resume__experience-description">{{ exp.get('description') }}</span>
+                                                {% endif %}
+                                            </div>
+
+                                            {% if exp.skills %}
+                                                <ul class="resume__skills-list">
+                                                    {% for skill_id, skill in exp.skills.items() %}
+                                                        <li class="resume__skill-item">
+                                                            <span class="resume__skill-name">{{ skill.get('name', 'No Skill Name') }}</span>
+                                                            {% if skill.get('skill_level') %}
+                                                                <span class="resume__skill-level">- Level: {{ skill.get('skill_level') }}</span>
+                                                            {% endif %}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <hr class="resume__divider">
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
+<script></script>

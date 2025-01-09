@@ -1,0 +1,31 @@
+<!-- Projects HTML with Jinja Improvements-->
+{% extends "shared/layout.html" %}
+
+{% block title %}Projects - Saarthak Sharma{% endblock %}
+
+{% block maincontent %}
+<div class="projects">
+    <h1>Hello! Below is a list of projects I worked on:</h1>
+    <p>Click an image or hyperlink to learn more.</p>
+    
+    <!-- Piano Project Section -->
+    <div class="projects__piano">
+        <!-- Piano Image with Link -->
+        <div class="piano__image">
+            <a href="{{ url_for('piano') }}">
+                <img src="static/main/images/piano.jpeg" alt="Piano Project" loading="lazy">
+
+            </a>
+        </div>
+
+        <!-- Piano Description -->
+        <div class="piano__description">
+            <h2>Piano Project</h2>
+            <p>An interactive virtual piano with sound effects for each key. Created by implementing HTML, CSS, and JavaScript.
+                You can play the piano using your keyboard or by clicking the keys. 
+                <a href="{{ url_for('piano') }}">Click here</a> to explore the piano project!</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<script></script>

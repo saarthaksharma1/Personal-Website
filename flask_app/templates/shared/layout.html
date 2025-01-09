@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Saarthak Sharma{% endblock %}</title>
+    
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/feedback.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/login.css') }}">
+
+    <!-- Includes login.css only for login.html -->
+    {% if 'login' in request.path %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/login.css') }}">
+    {% endif %}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='main/images/logo-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='main/images/logo.png') }}" sizes="16x16">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div id="Banner-image">
+            <img src="{{ url_for('static', filename='main/images/banner.jpg') }}" alt="banner" loading="lazy" id="Banner-image">
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__text">
+                <!-- If email login is successful, the navbar text will change to "Welcome (user)"-->
+                {% if session.get('email') %}
+                    Welcome {{ session.get('email') }}!
+                <!-- If email login is not successful, the navbar text will remain "CSE 477 Homework 3"-->
+                {% else %}
+                    Saarthak Sharma
+                {% endif %}
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="/home" class="navbar__links">My Story</a></li>
+                <li class="navbar__item"><a href="/resume" class="navbar__links">Resume</a></li>
+                <li class="navbar__item"><a href="/projects" class="navbar__links">Projects</a></li>
+                <li class="navbar__item"><a href="/chat" class="navbar__links">Chat</a></li>
+
+                <!-- Adds Login/Logout Link -->
+                <li class="navbar__item">
+                    {% if session.get('email') %}
+                        <a href="/logout" class="navbar__links">Logout</a>
+                    {% else %}
+                        <a href="/login" class="navbar__links">Login</a>
+                    {% endif %}
+                </li>
+
+                <!-- LinkedIn Link -->
+                <li class="navbar__item">
+                    <a href="https://www.linkedin.com/in/saarthaksharma1" class="navbar__links">
+                        <img src="{{ url_for('static', filename='main/images/social-linkedin.png') }}" 
+                             alt="LinkedIn" 
+                             class="linkedin-img" 
+                             loading="lazy">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Feedback Toggle Button -->
+    <button id="feedback-toggle" class="feedback__toggle-btn">Feedback</button>
+
+    <!-- Feedback Form Container -->
+    <div id="feedback-form-container" class="feedback__container">
+        <form action="/processfeedback" method="POST" enctype="multipart/form-data" class="feedback__form">
+            <label for="name" class="feedback__form-label">Name:</label>
+            <input type="text" id="name" name="name" required class="feedback__form-input" title="Enter your name here">
+        
+            <label for="email" class="feedback__form-label">Email:</label>
+            <input type="email" id="email" name="email" required class="feedback__form-input" title="Enter your email address">
+        
+            <label for="comment" class="feedback__form-label">Comment:</label>
+            <input type="text" id="comment" name="comment" required class="feedback__form-input" title="Enter your feedback comment here">
+        
+            <button type="submit" class="feedback__form-submit" name="feedback_submit">Submit</button>
+        </form>
+        
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p>&copy; 2024 Saarthak Sharma</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
+<script></script>

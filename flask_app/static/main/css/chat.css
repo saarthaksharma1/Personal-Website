@@ -1,0 +1,76 @@
+/* Chat CSS */
+
+/* Chat box styling */
+#chat {
+    width: 100%;
+    height: 21.875rem; 
+    padding: 0.75rem 1.25rem;
+    box-sizing: border-box;
+    border: 0.125rem solid #cccccc; 
+    border-radius: 0.25rem; 
+    background-color: #f8f8f8;
+    font-size: 1rem; 
+    resize: none;
+    overflow-y: auto;
+}
+
+/* Message input field styling */
+.message-input {
+    width: 100%;
+    padding: 0.625rem; 
+    margin-top: 0.625rem; 
+    font-size: 0.875rem; 
+}
+
+/* Send button styling */
+.send-btn {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 0.625rem 0.9375rem; 
+    margin-top: 0.625rem; 
+    border-radius: 0.3125rem; 
+    cursor: pointer;
+}
+
+/* Send button hover effect */
+.send-btn:hover {
+    background-color: #45a049;
+}
+
+/* Leave chat button styling */
+.leave-chat-btn {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 0.625rem 0.9375rem; 
+    margin-top: 0.625rem; 
+    border-radius: 0.3125rem; 
+    cursor: pointer;
+}
+
+/* Leave chat button hover effect */
+.leave-chat-btn:hover {
+    background-color: #d93838;
+}
+
+/* Mobile View */
+@media (max-width: 40.625rem) {
+    #chat {
+        height: 15rem; 
+        padding: 0.5rem; 
+        font-size: 0.875rem; 
+    }
+
+    .message-input {
+        padding: 0.5rem;
+        font-size: 0.8125rem; 
+    }
+
+    .send-btn,
+    .leave-chat-btn {
+        padding: 0.5rem 0.75rem; 
+        font-size: 0.8125rem; 
+        margin-top: 0.5rem; 
+    }
+}

@@ -1,0 +1,26 @@
+<!-- Home HTML with Jinja Improvements-->
+{% extends "shared/layout.html" %}
+
+{% block title %}Home - Saarthak Sharma{% endblock %}
+
+{% block maincontent %}
+<div class="main">
+    <div class="main__container">
+        <div class="saarthak__img--container">
+            <img src="static/main/images/IMG_4791.jpeg" alt="Saarthak Sharma" loading="lazy">
+        </div>
+        <div class="main__content">
+            <h1>Saarthak Sharma</h1>
+            <p>Hello! My name is Saarthak Sharma. I am an incoming senior at Michigan State University 
+                majoring in Computer Science and minoring in Business. Equipped with a strong technical skill set, 
+                I am eager to leverage my talents to contribute to a collaborative and positive work environment while expanding my expertise in the field of software engineering, 
+                database development, data science, artificial intelligence, and cyber security.</p>
+            <div class="fun__fact">
+                <h2>Fun Fact</h2>
+                <p>{{ fun_fact }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<script></script>

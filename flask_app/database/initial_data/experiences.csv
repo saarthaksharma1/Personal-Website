@@ -1,0 +1,7 @@
+"experience_id","position_id","name","description","hyperlink","start_date","end_date"
+"1","1","Gitleaks Repository Scan","Conducted scans on critical applications to identify vulnerabilities","https://www.mbfs.com/home","2024-05-06","2024-08-02"
+"2","1","Dashboard Development","Developed a data dashboard for vulnerabilities","https://www.mbfs.com/home","2024-05-06","2024-08-02"
+"3","2","Audit Coordination","Ensured adherence to industry standards for quality","https://www.yazaki-na.com","2023-05-15","2023-08-18"
+"4","3","CSE335 Student Mentoring","Mentored students in OOP and best practices","https://cse335.egr.msu.edu","2024-08-26",NULL
+"5","4","Data Collection","Collected and analyzed data for academic assistance","https://math.msu.edu","2022-09-22",NULL
+"6","2","Front-End Development","Leveraged programming techniques in JSON, CSS, and JavaScript to elevate front-end development of SharePoint list data.","https://www.yazaki-na.com","2023-05-15","2023-08-18"

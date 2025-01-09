@@ -1,0 +1,21 @@
+/* Header CSS Section */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Banner Image*/
+#Banner-image {
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+}
+
+/* Mobile View */
+@media (max-width: 40.625rem) {
+    header {
+        height: 20vh; 
+    }
+}
+
